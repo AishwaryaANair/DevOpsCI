@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your_secret_key_here'
+SECRET_KEY = 't(_*8!jp@frg=%x(m0v(h@#mhp)7_^e2%emu#^k4$k3mo$x&ei'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_jenkins'
+
 ]
 
 MIDDLEWARE = [
@@ -119,3 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+PROJECT_APPS = (
+'polls'
+)
+
+JENKINS_TASKS = (
+'django_jenkins.tasks.run_pep8',
+'django_jenkins.tasks.run_pyflakes',
+)
